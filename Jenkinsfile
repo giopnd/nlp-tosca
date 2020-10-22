@@ -11,7 +11,7 @@ pipeline {
             }
             steps {
                 sh 'unzip -o atc-nlp-demo_w1-wip1.csar'
-                sh 'python3 -m venv .venv && source .venv/bin/activate'
+                sh 'python3 -m venv .venv && . .venv/bin/activate'
                 sh 'pip3 install opera'
                 sh 'ls'
                 sh 'opera deploy $DEPLOY_FILE'
