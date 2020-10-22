@@ -11,7 +11,8 @@ pipeline {
             }
             steps {
                 sh 'unzip -o atc-nlp-demo_w1-wip1.csar'
-                sh 'pip3 install boto3 ansible opera --user'
+                sh 'python3 -m venv .venv && . .venv/bin/activate'
+                sh 'pip install opera'
                 sh 'PATH="$(python3 -m site --user-base)/bin:${PATH}" && opera deploy $DEPLOY_FILE'
             }
         }
