@@ -12,7 +12,6 @@ pipeline {
             steps {
                 sh 'unzip -o atc-nlp-demo_w1-wip1.csar'
                 sh 'pip3 install boto3 ansible opera --user'
-                sh 'mkdir -p /tmp && cp nodetypes/radon.nodes.legacy/AwsCreateRole/files/policy/policy.json /tmp/policy.json'
                 sh 'PATH="$(python3 -m site --user-base)/bin:${PATH}" && opera deploy $DEPLOY_FILE'
             }
         }
